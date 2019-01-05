@@ -1,0 +1,256 @@
+::-webkit-scrollbar{width:8px}
+
+::-webkit-scrollbar-thumb{-webkit-border-radius:6px;border-radius:6px;background-color:#666}
+::-webkit-scrollbar-thumb:window-inactive{background-color:#ccc}
+
+.msg{
+    color: red;
+    font-style: italic;
+}
+.input-sm, .form-horizontal .form-group-sm .form-control {
+    padding:0px;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding: 0px;
+}
+
+.require::after{
+    content: "*";
+    color: red;
+}
+
+select{
+    width: 30%;
+}
+
+#footer{
+    height: 100px;
+}
+
+.box-footer{
+    margin-bottom: 30px;
+}
+
+.mark{
+    position: fixed;
+    background:black;
+    width: 40.5%;
+    height: 1px;
+    padding: 0px !important;
+}
+div.slide{
+    position: relative;
+}
+/* .form-group{
+    display: block;
+} */
+
+.wrap-loading{
+    display: table;
+}
+i.loading{
+    
+}
+.input-group .input-group-addon {
+    background-color: transparent !important;
+    padding: 0px;
+    border: 0px;
+
+}
+.col-md-1{
+    padding: 0px;
+    margin: 0px;
+}
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+#ajaxed_pagination ul li.current~li {
+    /* margin-left: -3px; */
+}
+#ajaxed_pagination{
+    height: 100px;
+}
+#ajaxed_pagination ul li {
+    line-height: 100px !important;
+    float: left;
+}
+/* #ajaxed_pagination ul li:first-child a, #ajaxed_pagination ul li:last-child a {
+    line-height: 33px !important;
+    padding-left: 5px;
+} */
+#ajaxed_pagination ul li.current~li {
+    margin-left: 1px !important;
+    margin-right: 2px !important;
+}
+#ajaxed_pagination a.pages {
+    line-height: 45px;
+}
+ul.paginations{
+    display: inline-block;
+}
+#ajaxed_pagination ul li:first-child a, #ajaxed_pagination ul li:last-child a {
+    padding-left: 15px !important;
+}
+#ajaxed_pagination ul li.end_page {
+    border-radius: 0 50% 50% 0 !important;
+}
+#ajaxed_pagination ul a.end:before {
+    content: "" !important;
+    display: none !important;
+}
+#ajaxed_pagination ul a.end i {
+    margin-left: 25px !important;
+}
+#ajaxed_pagination ul li:last-child a:before {
+    content: " " !important;
+}
+#ajaxed_pagination ul a.start:after {
+    content: "" !important;
+    display: none !important;
+}
+#ajaxed_pagination ul a.start i{
+    margin-left: 2px;
+}
+#ajaxed_pagination ul li.current~li a {
+    padding-left: 27px !important;
+}
+#ajaxed_pagination ul li.next {
+    padding-left: 8px !important;
+}
+/* aside.right-side{
+    background: ##333333 !important;
+} */
+
+#ajaxed_pagination ul li a:before {
+    margin-top: -22px !important;
+}
+
+#ajaxed_pagination ul li a:after, #ajaxed_pagination ul li a:before {
+    border-bottom: 22px solid transparent !important;
+    border-top: 22px solid transparent !important;
+}
+#ajaxed_pagination ul li{
+    height: 44px !important;
+}
+#ajaxed_pagination ul li a:after {
+    margin-top: -22px !important;
+}
+#ajaxed_pagination ul li:first-child a, #ajaxed_pagination ul li:last-child a {
+    line-height: 45px !important;
+}
+
+.paginations li.disabled{
+    /* opacity: 0.8 !important; */
+    color: red;
+}
+td{
+    vertical-align: middle !important;
+}
+
+#preview_picture{
+    min-width: 100px !important;
+    max-width: 200px !important;
+}
+th.sorting{
+    font-size: 12px !important;
+}
+
+h4.book_name{
+    float: left;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    padding: 0 10px;
+    width: 220px;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 500;
+    height: 50px;
+    display: block;
+}
+div.modal-info-book-chapter{
+
+}
+div.modal-info-book-chapter div.block-info{
+    padding: 30xp 4px 30px 4px !important;
+    color: #ccc;
+    display: inline-block;
+    width: 100%;
+    font-size: 16px;
+    border-bottom: 1px solid lightskyblue;
+}
+div.modal-info-book-chapter div.block-info:hover{
+    background-color: #333333;
+    cursor: pointer;
+    border-bottom: 1px solid lightskyblue;
+}
+div.modal-info-book-chapter div.block-info a{
+    color: #ccc;
+    font-size: 16px;
+}
+div.modal-info-book-chapter div.block-info:last-child{
+    margin-bottom: 14px;
+}
+div.wrap-info-book-picture{
+    /* position: relative; */
+}
+div.wrap-info-book-picture .info-book-picture{
+    position: absolute;
+    z-index: 10;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    left: 46%;
+    top: 102.5%;
+}
+
+#book-box .block-info div.col-md-2 a:hover{
+    color: darkgray;
+}
+
+button.submit-form, button.btn-login {
+	color: #fff;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+/* ANIMATION */
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}

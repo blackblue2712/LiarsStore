@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/vtlai.css">
+<link rel="stylesheet" type="text/css" href="css/tab.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/new-homepage.css">
+
+<body>
+	<div class="header">
+		<div class="container">
+			<div class="header-logo"><a class="logo" href="#"><span>ANIME47.COM</span></a></div>
+			<div class="widget_search">
+				<form method="GET" id="form-search" action="tim-kiem/">
+					<div><input type="text" name="keyword" placeholder="Tìm: tên phim, đạo diễn, diễn viên" value="" onkeyup="onSearch(this.value)" id="searchkeyword" autocomplete="off"><input id="searchsubmit" class="" value=" " type="submit"></div>
+				</form>
+				<div class="search-suggest" style="display: none;">
+					<ul style="margin-bottom: 0;" id="search-suggest-list"></ul>
+				</div>
+			</div>
+			<div class="widget_user_header">
+				<a class="button-register" rel="nofollow" href="#"></a><a class="button-login" rel="nofollow" href="#"></a><a class="button-login-with-fb" rel="nofollow" href="/#"></a>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<!-- NAV BAR -->
+	<nav>
+		<div class="container">
+			<ul id="mega-menu-1">
+				<li class=""><a href="#">Trang Chủ</a></li>
+				<li>
+					<a class="dc-mega">Thể loại<span class="dc-mega-icon"></span></a>
+					<div class="sub-container" style="top: auto; z-index: 1000;">
+						<ul class="sub">
+							<li><a href="#">Đời Thường</a> </li>
+							<li><a href="#">Harem</a> </li>
+							<li><a href="#">Shounen</a> </li>
+							<li><a href="#">Học Đường</a> </li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a class="dc-mega">Trạng Thái<span class="dc-mega-icon"></span></a>
+					<div class="sub-container" style="top: auto; z-index: 1000;">
+						<ul class="sub">
+							<li><a href="#">Hoàn thành</a></li>
+							<li><a href="#">Đang tiến hành</a></li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a class="dc-mega">Xem Nhiều<span class="dc-mega-icon"></span></a>
+					<div class="sub-container" style="top: auto; z-index: 1000;">
+						<ul class="sub">
+							<li><a href="#">Ngày</a></li>
+							<li><a href="#">Tuần</a></li>
+							<li><a href="#">Tháng</a></li>
+							<li><a href="#">Mùa Này</a></li>
+							<li><a href="#">Năm Này</a></li>
+							<li><a href="#">Năm Trước</a></li>
+							<li><a href="#">Mùa trước</a></li>
+							<li><a href="#">Tất cả</a></li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a class="dc-mega">Bình luận nhiều<span class="dc-mega-icon"></span></a> 
+					<div class="sub-container" style="top: auto; z-index: 1000;">
+						<ul class="sub">
+							<li><a href="#">Mùa này</a> </li>
+							<li><a href="#">Mùa trước</a> </li>
+							<li><a href="#">Năm này</a> </li>
+							<li><a href="#">Năm trước</a> </li>
+							<li><a href="#">Tất cả</a> </li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a class="dc-mega">Lưỡng Long Hợp Thể<span class="dc-mega-icon"></span></a>
+					<div class="sub-container" style="top: auto; z-index: 1000;">
+						<ul class="sub">
+							<li><a href="#">Hành Động + Hài Hước</a></li>
+							<li><a href="#">Lãng Mạn + Hành Động</a></li>
+							<li><a href="#">Harem + Hài Hước</a></li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a class="dc-mega">Năm<span class="dc-mega-icon"></span></a> 
+					<div class="sub-container" style="top: auto; z-index: 1000;">
+						<ul class="sub">
+							<li><a href="#">2018</a></li>
+							<li><a href="#">2017</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="#">Hỏi-Đáp</a></li>
+				<li class="">
+					<a class="dc-mega">TV/Movie<span class="dc-mega-icon"></span></a>
+					<div class="sub-container" style="top: auto; z-index: 1000;">
+						<ul class="sub" style="display: none;">
+							<li><a href="#">TV Series</a></li>
+							<li><a href="#">Movie</a></li>
+							<li><a href="#">Drama-Live action</a></li>
+							<li><a href="#">OVA</a></li>
+							<li><a href="#">SP</a></li>
+							<li><a href="#">Cartoon</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- END NAV BAR -->
+	<div class="clear"></div>
+	<div class="row ad-container banner-top">
+		<div class="col-lg-12">
+			<div class="ad-center-980">
+			</div>
+		</div>
+	</div>
+
+	<!-- CONTAINER -->
+	<div class="container">
+		<div class="row ad-container banner-top">
+			<div class="col-lg-12">
+				<div class="ad-center-980">
+				</div>
+			</div>
+		</div>
+		<!-- BREADCRUMB -->
+		<ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+			<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+				<a itemprop="item" title="Xem Anime" href="/"><span itemprop="name">Xem Anime</span></a>
+			</li>
+			<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+				<a itemprop="item" title="" href="#"><span itemprop="name">UN COMPLETE </span></a>
+			</li>
+		</ol>
+		<!-- END BREADCRUMB -->
+
+		<!-- SORTING -->
+		<div class="list-movie-filter" style="margin-bottom: 10px;" id="list-movie-filter">
+			<div class="list-movie-filter-main">
+				<form id="form-filter" class="form-inline" method="GET" action="tim-nang-cao/?keyword=">
+					<div class="list-movie-filter-item">
+						<label for="filter-eptype">Tiến độ</label>
+						<select class="form-control" id="filter-eptype" name="status">
+							<option value="">Tất cả</option>
+							<option value="complete">Hoàn thành</option>
+							<option value="ongoing">Chưa xong</option>
+						</select>
+					</div>
+					<div class="list-movie-filter-item">
+						<label for="filter-category">Thể loại</label>
+						<span class="multiselect-native-select">
+							<select style="margin-top: 5px;" class="multiselect-native-select" id="filter-category" name="genres" multiple="multiple">
+								<option value="38">Đời Thường</option>
+								<option value="36">Harem</option>
+								<option value="35">Shounen</option>
+								<option value="33">Học Đường</option>
+							</select>
+							<div style="margin-top: 5px;" class="btn-group">
+								<button type="button" class="multiselect dropdown-toggle form-control selectpicker" data-toggle="dropdown" title="Genres"><span class="multiselect-selected-text">Genres</span> <b class="caret"></b></button>
+								<ul class="multiselect-container dropdown-menu">
+									<li><a tabindex="0"><label class="checkbox"><input type="checkbox" value="38"> Đời Thường</label></a></li>
+									<li><a tabindex="0"><label class="checkbox"><input type="checkbox" value="36"> Harem</label></a></li>
+								</ul>
+							</div>
+						</span>
+					</div>
+					<div class="list-movie-filter-item">
+						<label for="filter-country">Theo mùa</label>
+						<select class="form-control" id="filter-country" name="season">
+							<option value="">Tất cả</option>
+							<option value="5">Xuân</option>
+						</select>
+					</div>
+					<div class="list-movie-filter-item">
+						<label for="filter-year">Năm phát hành</label>
+						<select id="filter-year" name="year" class="form-control">
+							<option value="">Tất cả</option>
+							<option value="2018">2018</option>
+							<option value="2017">2017</option>
+						</select>
+					</div>
+					<div class="list-movie-filter-item">
+						<label for="filter-sort">Sắp xếp</label>
+						<select class="form-control" id="filter-sort" name="sort">
+							<option value="popular">Lượt xem</option>
+							<option value="comment">Bình luận</option>
+							<option value="year">Năm</option>
+						</select>
+					</div>
+					<button type="submit" id="btn-movie-filter" class="btn btn-red btn-filter-movie"><span>Duyệt phim</span></button>
+					<div class="clear"></div>
+				</form>
+			</div>
+		</div>
+		<!-- END SORTING -->
+
+
+		<!-- ROW MAIN CONTENT -->
+
+		<!-- SILDER -->
+		<div class="row nominated-movie">
+			<div class="col-lg-12">
+				<h2 class="header-list-index" style="margin-top: 0px;"><span class="title-list-index">Phim đề cử</span></h2>
+				<div class="top-movie-list ">
+					<div class="list_carousel">
+						<div class="caroufredsel_wrapper" style="display: block; text-align: start; float: none; position: relative; top: auto; right: auto; bottom: auto; left: auto; z-index: auto; width: 792px; height: 251px; margin: 0px; overflow: hidden;">
+							<ul id="movie-carousel-top" style="text-align: left; float: none; position: absolute; top: 0px; right: auto; bottom: auto; left: 0px; margin: 0px; width: 2766px; height: 251px; z-index: auto;">
+								<li>
+									<a class="movie-item m-block" title="Shikabane Hime: Puchitto | Shikabane Hime Season 1 Special| Shikabane Hime: Chibi Special | Shikabane Hime: Kuro Omake - Shikabane Hime Season 1 Special" href="/phim/shikabane-hime-season-1-special/m4076.html">
+										<div class="block-wrapper">
+											<div class="movie-thumbnail ratio-box ratio-3_4">
+												<div class="public-film-item-thumb ratio-content" style="background-image:url('https://img.anime47.com/imgur/aduF6wG.jpg')"></div>
+											</div>
+											<div class="movie-meta">
+												<div class="movie-title-1"> Shikabane Hime: ...</div>
+												<span class="movie-title-2">Shikabane Hime Season 1 Special</span><span class="movie-title-chap">45758 </span><span class="ribbon">01/01</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a class="movie-item m-block" title="Chocotan! - Chocotan!" href="/phim/chocotan/m4466.html">
+										<div class="block-wrapper">
+											<div class="movie-thumbnail ratio-box ratio-3_4">
+												<div class="public-film-item-thumb ratio-content" style="background-image:url('https://farm6.staticflickr.com/5604/15530111076_0645dcc607_o.jpg')"></div>
+											</div>
+											<div class="movie-meta">
+												<div class="movie-title-1">Chocotan!</div>
+												<span class="movie-title-2">Chocotan!</span><span class="movie-title-chap">42952 </span><span class="ribbon">01/01</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a class="movie-item m-block" title="Kaze No Stigma - Stigma Of The Wind - Kaze No Stigma - Stigma Of The Wind" href="/phim/kaze-no-stigma-stigma-of-the-wind/m1456.html">
+										<div class="block-wrapper">
+											<div class="movie-thumbnail ratio-box ratio-3_4">
+												<div class="public-film-item-thumb ratio-content" style="background-image:url('https://t2.gstatic.com/images?q=tbn:ANd9GcT3NmcjhaWEKAW80Yo8KtPBve1yOZ51PgHDXgu1Hl0DT19W5EPRiw')"></div>
+											</div>
+											<div class="movie-meta">
+												<div class="movie-title-1"> Kaze No ...</div>
+												<span class="movie-title-2">Kaze No Stigma - Stigma Of The Wind</span><span class="movie-title-chap">523085 </span><span class="ribbon">24/24</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a class="movie-item m-block" title="Peace Maker Kurogane Movie 2: Yuumei - Peace Maker Kurogane Movie 2: Yuumei" href="/phim/peace-maker-kurogane-movie-2-yuumei/m7010.html">
+										<div class="block-wrapper">
+											<div class="movie-thumbnail ratio-box ratio-3_4">
+												<div class="public-film-item-thumb ratio-content" style="background-image:url('https://myanimelist.cdn-dena.com/images/anime/1947/93389.jpg')"></div>
+											</div>
+											<div class="movie-meta">
+												<div class="movie-title-1"> Peace Maker ...</div>
+												<span class="movie-title-2">Peace Maker Kurogane Movie 2: Yuumei</span><span class="movie-title-chap">526 </span><span class="ribbon">PV</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a class="movie-item m-block" title="Gaworare - Kanojo Ga Flag O Oraretara" href="/phim/kanojo-ga-flag-o-oraretara/m4008.html">
+										<div class="block-wrapper">
+											<div class="movie-thumbnail ratio-box ratio-3_4">
+												<div class="public-film-item-thumb ratio-content" style="background-image:url('https://img.anime47.com/imgur/KDIw9DR.jpg')"></div>
+											</div>
+											<div class="movie-meta">
+												<div class="movie-title-1">Gaworare</div>
+												<span class="movie-title-2">Kanojo Ga Flag O Oraretara</span><span class="movie-title-chap">548236 </span><span class="ribbon">13/13</span>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="clear"></div>
+						<a id="prevTop" class="prev" rel="nofollow" style="display: block;"><span class="arrow-icon left"></span></a><a id="nextTop" class="next" rel="nofollow" style="display: block;"><span class="arrow-icon right"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END SLIDER -->
+
+		<!-- MAIN CONTENT -->
+		<div class="row">
+			<div class="col-sm-8">
+				<div class="movie-info">
+					<div class="block-movie-info movie-info-box">
+						<div class="block-wrapper page-single" itemscope="" itemtype="https://schema.org/Movie">
+							<div class="movie-info">
+								<div class="block-movie-info movie-info-box">
+									<div class="row">
+										<div class="col-6 movie-detail">
+											<h1 class="movie-title"><span class="title-1">Kishuku Gakkou no Juliet</span><span class="title-2">Kishuku Gakkou no Juliet</span><span class="title-year"> (2018)</span></h1>
+											<div class="movie-meta-info">
+												<dl class="movie-dl">
+													<dt class="movie-dt">Trạng thái: </dt>
+													<dd class="movie-dd imdb">12/12</dd>
+													<br>
+													<dt class="movie-dt">Thể loại: </dt>
+													<dd class="movie-dd dd-cat"><a href="#">Hành Động</dd>
+													<br>	
+												</dl>
+												<div class="clear"></div>
+											</div>
+											<div class="box-rating">
+												<b>
+													Nội Dung: 
+													<div class="block2 servers">
+														
+													</div>
+												</b>
+											</div>
+										</div>
+										<div class="col-6 movie-image">
+											<div class="movie-l-img">
+												<img src="https://img.anime47.com/imgur/mkVKMAc.jpg" style="width:100%;height:100%;">
+												<ul class="btn-block">
+													<li class="item">
+														<a id="btn-film-watch" class="btn btn-green" href="javascript:void(0)"> Thêm Vào Hộp</a>
+													</li>
+													<li class="item">
+														<a id="btn-film-watch" class="btn btn-red" href="#">Xem Anime</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div><!-- end row -->
+									
+									<!-- SUMARY -->
+									<blockquote class="block-movie-content">
+										<div class="content"><div id="div1"></div><div>
+										<div class="clear"></div>
+									</blockquote>
+									
+									<blockquote class="block-movie-content">
+										<span class="tabs" style="display: block; left: 0">
+											<div class="tab active">
+												<div class="name"><a href="DAY">Nội dung</a></div>
+											</div>
+											<div class="tab">
+												<div class="name"><a href="DAY">Related</a></div>
+											</div>
+										</span>
+										<div class="clear"></div>
+										<br>
+										<div class="content" id="film-content" itemscope="" itemtype="http://schema.org/Review" itemprop="review">
+											<div class="news-article">
+												<p></p><p>Câu chuyện diễn ra tại Trường Nội trú Học viện Grigio, nơi học sinh đến từ hai quốc gia đối địch được gọi là Hắc Khuyển và Bạch Miêu. Persia và Inuzaka là thủ lĩnh của mỗi bên kí túc xá, nhưng họ lại bí mật yêu nhau. Bây giờ, họ phải giữ bí mật mối quan hệ của mình với những người bạn khác trong khi cố tránh khỏi những rắc rối. <br><br>(Nguồn: MAL News)</p><p></p>
+											</div>
+										</div>
+									</blockquote>
+
+								</div>
+							</div><!-- end movie info -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 sidebar" id="sidebar">
+				<div class="right-box top-film">
+					<h2 class="right-box-header star-icon"><span>Xem Nhiều Nhất</span></h2>
+					<span class="tabs">
+						<div class="tab active" data-name="day" data-target=".right-box.top-film .content">
+							<div class="name"><a title="Day" href="DAY">Ngày</a></div>
+						</div>
+						<div class="tab" data-name="week" data-target=".right-box.top-film .content">
+							<div class="name"><a title="DAY" rel="nofollow" href="DAY">Tuần</a></div>
+						</div>
+					</span>
+					<div class="right-box-content">
+						<div class="content" data-name="day">
+							<ul class="list-top-movie">
+								<li class="list-top-movie-item" id="list-top-movie-item">
+									<a class="list-top-movie-link" title="Kishuku Gakkou no Juliet - Kishuku Gakkou no Juliet" href="/phim/kishuku-gakkou-no-juliet/m7023.html">
+										<span class="status">12/12</span>
+										<div class="list-top-movie-item-thumb" style="background-image: url('https://img.anime47.com/imgur/mkVKMAc.jpg')"></div>
+										<div class="list-top-movie-item-info"><span class="list-top-movie-item-vn">Kishuku Gakkou no Juliet</span><span class="list-top-movie-item-en"> Kishuku Gakkou ...</span><span class="list-top-movie-item-view">11135 Lượt xem</span></div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div><!-- end right-box-content -->
+				</div>
+			</div>
+		</div>
+		<!-- END MAIN CONTENT -->
+
+
+		<!-- END ROW MAIN CONTENT -->
+	</div><!-- END CONTAINER -->
+
+
+	<!-- FOOTER -->
+	<footer>
+		<div class="footer">
+			<div class="container">
+				<div class="bar">
+					<div class="bar-wrap">
+						<ul class="links">
+							<li><a href="/">Xem anime</a></li>
+						</ul>
+						<div class="social">
+							<a href="https://www.facebook.com/anime47fanpage/" target="_blank" class="fb">
+								<span data-icon="f" class="icon"></span>
+								<span class="info">
+									<span class="follow">FANPAGE FACEBOOK</span>
+									<span class="num">
+
+									</span>
+								</span>
+							</a>
+							<a href="#" class="call">
+								<span data-icon="7" class="icon"></span>
+								<span class="info">
+									<span class="follow">Liên hệ quảng cáo:</span>
+									<span class="num">toiviet.com@gmail.com</span>
+								</span>
+							</a>
+						</div>
+						<div class="clear"></div>
+						<div class="copyright">© 2017 All Rights Reserved •</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- END FOOTER -->
+
+
+
+</body>
+</html>
