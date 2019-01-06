@@ -10,6 +10,7 @@
 
 
     $url_analytics_overview = URL::createURL("admin", "analytics", "overview");
+    $url_analytics_month    = URL::createURL("admin", "analytics", "month");
 ?>
 
 <section class="sidebar">
@@ -102,7 +103,7 @@
             </a>
             <ul class="treeview-menu">
                 <li class="sidebar-menu-overview"><a href="<?php echo $url_analytics_overview?>"><i class="fa fa-angle-double-right"></i>Overview</a></li>
-                <li><a href="#"><i class="fa fa-angle-double-right"></i>Month</a></li>
+                <li class="sidebar-menu-month"><a href="<?php echo $url_analytics_month?>"><i class="fa fa-angle-double-right"></i>Month</a></li>
             </ul>
         </li>
     </ul>

@@ -11,8 +11,12 @@
         public function overviewAction(){
             //TOTAL
             $this->_view->allTotalAmount = $this->_model->totalAmoutInAll();
-            
             $this->_view->render("analytics/overview");
+        }
+        public function monthAction(){
+            //TOTAL
+            $this->_view->allTotalAmount = $this->_model->totalAmoutInAll();
+            $this->_view->render("analytics/month");
         }
 
         public function chartAction(){

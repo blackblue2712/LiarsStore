@@ -58,7 +58,7 @@
                                         $xhtml .= '<tr><td class="totalAmount" colspan="6">Total: '.number_format($_SESSION["userLogin"]["totalAmount"]).'</td></tr>';
                                         $btn_checkout = '<button class="btn btn-danger checkout" id="submit-form-cart">Check out</button>';
                                     }else{
-                                        $xhtml = "<h4>Your cart is now empty</h4>";
+                                        $xhtml = "<h3 style='font-family: UTMCafetaRegular;'>Your cart is now empty</h3>";
                                         $btn_checkout = '';
                                     }
                                 ?>

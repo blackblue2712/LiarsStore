@@ -2,7 +2,7 @@
     <section class="content-header">
         <h1>
             Analytics
-            <small>sales revenue</small>
+            <small>sales revenue - overview</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -11,7 +11,10 @@
     </section>
     <?php
     //TOTAL
-        
+        $moth = "ars";
+        $ars  = 1;
+        echo $$moth;
+
         if(!empty($this->allTotalAmount)){
             $total = 0;
             foreach($this->allTotalAmount as $key => $value){
