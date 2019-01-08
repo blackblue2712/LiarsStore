@@ -11,10 +11,6 @@
     </section>
     <?php
     //TOTAL
-        $moth = "ars";
-        $ars  = 1;
-        echo $$moth;
-
         if(!empty($this->allTotalAmount)){
             $total = 0;
             foreach($this->allTotalAmount as $key => $value){

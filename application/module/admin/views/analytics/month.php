@@ -211,6 +211,7 @@
             animationEnabled: true,
             exportEnabled: true,
             theme: "dark2",
+            backgroundColor: "#333333",
             title:{
                 text: "Sales Revenue"              
             },
