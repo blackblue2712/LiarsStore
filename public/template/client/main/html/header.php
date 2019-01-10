@@ -14,10 +14,10 @@
 
     $username = "";
     $xHeader  = "";
-    $urlMyAccount   = URL::createURL("client", "user", "index");
-    $urlLogin       = URL::createURL("client", "index", "login");
-    $urlDetailCart  = URL::createURL("client", "cart-book", "detail");
-    $urlHistoryCart = URL::createURL("client", "cart-book", "history");
+    $urlMyAccount   = URL::createURL("client", "user", "index", null,"/account.html");
+    $urlLogin       = URL::createURL("client", "index", "login", null,"/login.html");
+    $urlDetailCart  = URL::createURL("client", "cart-book", "detail", null,"/cart.html");
+    $urlHistoryCart = URL::createURL("client", "cart-book", "history", null,"/history.html");
     
     if(isset($_SESSION["userLogin"])){
         $cPanel = "";

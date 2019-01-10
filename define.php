@@ -55,9 +55,9 @@
     define("RESIZE_DEFAULT_98x150"  , "98x150-default.png");
 
     //FACEBOOK
-    define("APP_SECRET", "");
-    define("APP_ID", "");
+    define("APP_SECRET", "e48beebeb353adbedea5cbfcf0fcb0cb");
+    define("APP_ID", "2193977410815932");
 
     //EMAIL
     define("EMAIL_SENT", "nghiab1706729@student.ctu.edu.vn");
-    define("PASSWORD", "");
+    define("PASSWORD", "9Hj6@hq2");

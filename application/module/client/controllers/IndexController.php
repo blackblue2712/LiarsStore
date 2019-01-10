@@ -54,6 +54,9 @@
         } 
 
         public function loginAction(){
+            echo '<pre style=color:#176F08;font-weight:bold >';
+            print_r($_SESSION);
+            echo '</pre>';
             $this->_templateObj->setFileConfig("loginTemplate.ini");
             $this->_templateObj->setFileTemplate("login.php");
             $this->_templateObj->setFolderTemplate("client/main");

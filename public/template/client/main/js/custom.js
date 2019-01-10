@@ -175,6 +175,9 @@ $(document).ready(function(){
         })
     })
 
+    //
+    
+
 })
 //AJAX RELATED BOOK
 function relatedBook(url){
@@ -282,10 +285,10 @@ function onOrder(url, price){
                     var modalLogin = "";
                     modalLogin += '<div id="myModal" class="modal fade" role="dialog">'
                                             +'<div class="modal-dialog">'
-                                                +'<div class="modal-content">'
+                                                +'<div class="modal-content" style="background-color: #1C1C1C">'
                                                 +'<div class="modal-header">'
                                                     +'<button type="button" class="close" data-dismiss="modal">×</button>'
-                                                    +'<h4 class="modal-title">You need Sign in!</h4>'
+                                                    +'<h4 class="modal-title" style="color: darkgreen">You need Sign in!</h4>'
                                                 +'</div>'
                                                 +'<div class="modal-body">'
                                                     +'<p>'+formLogin+'</p>'
@@ -297,11 +300,9 @@ function onOrder(url, price){
                                     
                                             +'</div>'
                                         +'</div>'
-                                        +'<script>$(document).ready(function(){$("#myModal").modal("show")})</script>';
+                                        +'<script>$(document).ready(function(){$("#myModal").modal("show") })</script>';
                     $("div.container").append(modalLogin);
                 }
-
-                
             }
         })
     }

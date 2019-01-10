@@ -1,0 +1,11 @@
+RewriteEngine   On
+
+RewriteRule     index.html                         index.php?module=client&controller=index&action=index
+RewriteRule     cart.html                          index.php?module=client&controller=cart-book&action=detail
+RewriteRule     history.html                       index.php?module=client&controller=cart-book&action=history
+RewriteRule     account.html                       index.php?module=client&controller=user&action=index
+RewriteRule     login.html                         index.php?module=client&controller=index&action=login
+RewriteRule     logout.html                        index.php?module=client&controller=index&action=logout
+RewriteRule     cate-([0-9]+).html                 index.php?module=client&controller=index&action=index&category_id=$1
+RewriteRule     detail-book-([0-9]+).html          index.php?module=client&controller=index&action=detail&id=$1
+RewriteRule     read-book-([0-9]+)-([0-9]+).html   index.php?module=client&controller=index&action=readBook&id_book=$1&chapter=$2

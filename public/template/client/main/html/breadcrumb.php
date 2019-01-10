@@ -4,7 +4,7 @@
     $breadcrumbLv3 = "";
     $breadcrumbLv4 = "";
 
-    $url_home      = URL::createURL('client', 'index', 'index');
+    $url_home      = URL::createURL('client', 'index', 'index', null,"/index.html");
     if(isset($this->params["category_id"])){
         foreach($this->_listCategory as $value){
             if($this->params["category_id"] == $value->id){
