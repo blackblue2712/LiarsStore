@@ -2,7 +2,9 @@
     $xPreview = '';
     if(!empty($this->chapterBook)){
         foreach($this->chapterBook as $key => $value){
-            $url_read = URL::createURL("client", "index", "readBook", array("id_book" => $this->detailBook["id"], "chapter" => $value["chapter_number"]));
+            $id_book = $this->detailBook["id"];
+            $chapter = $value["chapter_number"];
+            $url_read = URL::createURL("client", "index", "readBook", array("id_book" => $this->detailBook["id"], "chapter" => $value["chapter_number"]), "/read-book-$id_book-$chapter.html");
             $xPreview .= '<li><a href="'.$url_read.'" title="'.$value["chapter_number"].'">'.$value["chapter_number"].'</a></li>';
         }
     }

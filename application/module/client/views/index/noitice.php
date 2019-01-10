@@ -8,7 +8,7 @@
 <script type="text/javascript">
     var redi = $("span").delay(2000).promise();
     redi.done( () =>{
-        window.location = "/LiarsStore/index.php?module=client&controller=index&action=index";
+        window.location = "/LiarsStore/index.html";
     })
 </script>
 

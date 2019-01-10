@@ -7,7 +7,7 @@
 
     $linkCheckUserName = URL::createURL("client", "index", "ajaxCheckForm", array("table" => "user"));
     $linkCheckEmail    = URL::createURL("client", "index", "ajaxCheckForm", array("table" => "email"));
-    $linkRegister      = URL::createURL("client", "index", "register");
+    $linkRegister      = URL::createURL("client", "index", "register", null, "/register.html");
     $notice_msg = "";
     if(isset($_SESSION['notice'])){
         $notice_msg = "<span class='alert alert-danger notice' style='display:none'>".$_SESSION['notice']."</span>";

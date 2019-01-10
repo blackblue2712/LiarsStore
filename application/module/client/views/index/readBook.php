@@ -3,9 +3,14 @@
     $maxEp      = (int)$this->minMaxEp["maxEp"];
     $currentEp  = (int)$this->params["chapter"];
 
-    $url_back = URL::createURL("client", "index", "detail", array("id" =>$this->params["id_book"]));
-    $url_prev = URL::createURL("client", "index", "readBook", array("id_book" =>$this->params["id_book"], "chapter" => (int)($this->params["chapter"]-1) ));
-    $url_next = URL::createURL("client", "index", "readBook", array("id_book" =>$this->params["id_book"], "chapter" => (int)($this->params["chapter"]+1) ));
+    $id_book = (int)$this->params["id_book"];
+    $chapter = (int)$this->params["chapter"];
+    $Nextchapter = (int)$this->params["chapter"] + 1;
+    $Prevchapter = (int)$this->params["chapter"] - 1;
+
+    $url_back = URL::createURL("client", "index", "detail", array("id" =>$id_book), "/detail-book-$id_book.html");
+    $url_prev = URL::createURL("client", "index", "readBook", array("id_book" =>$id_book, "chapter" => $Prevchapter), "/read-book-$id_book-$Prevchapter.html");
+    $url_next = URL::createURL("client", "index", "readBook", array("id_book" =>$id_book, "chapter" => $Nextchapter), "/read-book-$id_book-$Nextchapter.html");
 
     
     if(isset($_SESSION["configReadBook"])){

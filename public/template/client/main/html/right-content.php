@@ -1,7 +1,7 @@
 <?php
     $xhtml = "";
     foreach($this->listSpecial as $key => $value){
-        $linkDetail = URL::createURL("client", "index", "detail", array("id" => $value["id"]));
+        $linkDetail = URL::createURL("client", "index", "detail", array("id" => $value["id"]), "/detail-book-$value[id].html");
         $picture    = Helper::createPathPicture(PATH_PICTURE_BOOK, URL_PICTURE_BOOK, "maxResize", $value["picture"]);
         if($key == 0) $descript = "";
         else $descript   = Helper::sliceStr($value["book_descript"], 3);

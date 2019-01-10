@@ -9,10 +9,10 @@
                 <h3 class="title">New Book UPDATING</h3>
                 <span class="tabs">
                     <div class="tab active" data-name="all" data-target=".block.update .content">
-                        <div class="name"><a title="All" href="javascript:void(0)">Tất cả</a></div>
+                        <div class="name"><a title="All" href="javascript:void(0)">Overall</a></div>
                     </div>
                     <div class="tab" data-name="muanay" data-target=".block.update .content"><div class="name">
-                        <a title="anime mùa này" href="#">Mùa này</a></div>
+                        <a title="anime mùa này" href="javascript:void(0)">Season</a></div>
                     </div>
                 </span>
             </div><!-- end widget-title -->
@@ -24,7 +24,7 @@
                             $xhtml = "";
                             if(!empty($this->listBook)){
                                 foreach($this->listBook as $key => $value){
-                                    $linkDetail = URL::createURL("client", "index", "detail", array("id" => $value["id"]));
+                                    $linkDetail = URL::createURL("client", "index", "detail", array("id" => $value["id"]), "/detail-book-$value[id].html");
                                     $picture    = Helper::createPathPicture(PATH_PICTURE_BOOK, URL_PICTURE_BOOK, "maxResize", $value["picture"]);
                                     $sale_off   = ($value["sale_off"] != 0) ? '<span class="ribbon">-'.$value["sale_off"].'%</span>' : "";
                                     $xhtml .= '<li><a class="movie-item m-block" title="'.$value["name"].'" href="'.$linkDetail.'">

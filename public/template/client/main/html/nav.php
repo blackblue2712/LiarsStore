@@ -5,7 +5,8 @@
         $xCateForSorting = "";
         foreach($this->_listCategory as $key => $value){
             $name = Helper::sliceStr($value->name, 3);
-            $url  = URL::createURL("client", "index", "index", array("category_id" => $value->id));
+            $cateFilter = URL::filterURL($value->name);
+            $url  = URL::createURL("client", "index", "index", array("category_id" => $value->id), "/cate-$cateFilter-$value->id.html");
             $xCate .= '<li><a data-id="'.$value->id.'" href="'.$url.'" title="'.$value->name.'">'.$name.'</a></li>';
             $xCateForSorting .= '<li><a tabindex="0"><label class="checkbox"><input name="form[search_category][]" type="checkbox" value="'.$value->id.'">'.$value->name.'</label></a></li>';
         }
@@ -13,7 +14,7 @@
         $xCate = "Updaing...";
     }
 
-    $urlHome = URL::createURL("client","index", "index");
+    $urlHome = URL::createURL("client","index", "index", null, "/index.html");
     
 ?>
 <nav>

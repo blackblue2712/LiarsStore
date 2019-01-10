@@ -177,9 +177,9 @@
                 
                 $sqlInsert = $this->_model->createInsertSql($array_insert, "cart");
                 $affectedRows = $this->_model->executeAndReturnAffectedRows($sqlInsert);
-                URL::redirect("client", "cart-book", "detail");
+                URL::redirect("client", "cart-book", "detail", null, "/cart.html");
             }else{
-                URL::redirect("client", "cart-book", "detail");
+                URL::redirect("client", "cart-book", "detail", null, "/cart.html");
             }
         }
 

@@ -36,7 +36,7 @@
                                             $class          = ($i % 2 == 0)? "even":"odd";
                                             $quantity   = $_SESSION["userLogin"]["cart"][$value["id"]]["quantity_book"];
                                             $price      = $_SESSION["userLogin"]["cart"][$value["id"]]["price"];
-                                            $linkDetail = URL::createURL("client", "index", "detail", array("id" => $value["id"]));
+                                            $linkDetail = URL::createURL("client", "index", "detail", array("id" => $value["id"]), "/detail-book-$value[id].html");
                                             $picture    = Helper::createPathPicture(PATH_PICTURE_BOOK, URL_PICTURE_BOOK, "maxResize", $value["picture"]);
                                             $sale_off   = ($value["sale_off"] != 0) ? '<span class="ribbon">-'.$value["sale_off"].'%</span>' : "";
                                             $xhtml .= '<tr class="'.$class.'" id="book-in-cart-'.$value["id"].'">

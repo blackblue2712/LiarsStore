@@ -1,11 +1,11 @@
 <?php
     if(!isset($_SESSION["emailToResendActivecCode"])){
-        $redirectURL = URL::createURL("client", "index","index");
+        $redirectURL = URL::createURL("client", "index","index", null, "/index.html");
         echo Helper::createScript("window.location = '".$redirectURL."'");
     }
 
     $urlResendActiveCode = URL::createURL("client", "index", "resendActiveCode");
-    $urlBack             = URL::createURL("client", "index", "index");
+    $urlBack             = URL::createURL("client", "index", "index", null, "/index.html");
 ?>
 <div class="div-col-sm-8">
     <div class="bs-callout bs-callout-info" id="callout-labels-inline-block" style="margin-bottom: 42px;">

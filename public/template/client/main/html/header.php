@@ -18,6 +18,7 @@
     $urlLogin       = URL::createURL("client", "index", "login", null,"/login.html");
     $urlDetailCart  = URL::createURL("client", "cart-book", "detail", null,"/cart.html");
     $urlHistoryCart = URL::createURL("client", "cart-book", "history", null,"/history.html");
+    $urlSearch      = URL::createURL("client", "cart-book", "history", null,"/index.html");
     
     if(isset($_SESSION["userLogin"])){
         $cPanel = "";
@@ -31,7 +32,7 @@
                         <button type="button" class="btn btn btn-bdown dropdown-toggle btn-small" data-toggle="dropdown"><span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="'.$urlMyAccount.'">My Account</a></li>
-                            <li><a class="fxlink-logout" href="#">Sign out</a></li>
+                            <li><a class="fxlink-logout" href="javascript:void(0)">Sign out</a></li>
                             <li class="divider"></li>'.$cPanel.'
                         </ul>
                     </div>
@@ -60,7 +61,7 @@
     <div class="container">
         <div class="header-logo"><a class="logo" href="#"><span>ANIME47.COM</span></a></div>
         <div class="widget_search">
-            <form method="POST" id="form-search" name="form-search" action="/LiarsStore/index.php?module=client&controller=index&action=index">
+            <form method="POST" id="form-search" name="form-search" action="<?php echo $urlSearch?>">
                 <div>
                     <input type="text" name="form[keyword]" placeholder="Find: name, author, description" value="<?php echo $keyword?>" onkeyup="onSearch(this.value)" id="searchkeyword" autocomplete="off">
                     <input id="searchsubmit" class="" value=" " type="submit">
