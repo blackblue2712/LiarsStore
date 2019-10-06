@@ -11,9 +11,9 @@
 
 <body>
 	<div class="wrap-mask"></div>
-    <?php require_once PATH_TEMPLATE . DS . "client\main\html\\header.php" ?>
+    <?php require_once PATH_TEMPLATE . DS . "client/main/html/header.php" ?>
 	<!-- NAV BAR -->
-	<?php require_once PATH_TEMPLATE . DS . "client\main\html\\nav.php" ?>
+	<?php require_once PATH_TEMPLATE . DS . "client/main/html/nav.php" ?>
 	<!-- END NAV BAR -->
 	<div class="clear"></div>
 	<div class="row ad-container banner-top">
@@ -27,13 +27,13 @@
 	<div class="container">
 		<div class="row ad-container banner-top"><div class="col-lg-12"><div class="ad-center-980"></div></div></div>
 		<!-- BREADCRUMB -->
-		<?php require_once PATH_TEMPLATE . DS . "client\main\html\breadcrumb.php" ?>
+		<?php require_once PATH_TEMPLATE . DS . "client/main/html/breadcrumb.php" ?>
 		<!-- END BREADCRUMB -->
 
 		<!-- SORTING -->
 		<?php
 			if($this->params["action"] == "index" && $this->params["controller"] == "index"){
-				require_once PATH_TEMPLATE . DS . "client\main\html\sorting.php";
+				require_once PATH_TEMPLATE . DS . "client/main/html/sorting.php";
 			}
 		?>
 		<!-- END SORTING -->
@@ -41,11 +41,11 @@
 
 		<!-- ROW MAIN CONTENT -->
         <!-- SILDER -->
-        <?php //require_once PATH_TEMPLATE . DS . "client\main\html\slider.php" ?>
+        <?php //require_once PATH_TEMPLATE . DS . "client/main/html/slider.php" ?>
         <!-- MAIN CONTENT -->
         <div class="row">
             <?php require_once $this->_fileView ?>
-            <?php //require_once PATH_TEMPLATE . DS . "client\main\html\\right-content.php" ?>
+            <?php //require_once PATH_TEMPLATE . DS . "client/main/html//right-content.php" ?>
         </div>
 		<!-- END MAIN CONTENT -->
 		
@@ -61,7 +61,7 @@
 
 
 	<!-- FOOTER -->
-	<?php require_once PATH_TEMPLATE . DS . "client\main\html\\footer.php" ?>
+	<?php require_once PATH_TEMPLATE . DS . "client/main/html/footer.php" ?>
 	<!-- END FOOTER -->
 
 

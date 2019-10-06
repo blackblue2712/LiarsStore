@@ -21,10 +21,7 @@
         <h2 class="right-box-header star-icon"><span>TOP VIEW</span></h2>
         <span class="tabs">
             <div class="tab active" data-name="day" data-target=".right-box.top-film .content">
-                <div class="name rank-views-in-day"><a title="Day" href="javascript:rankViews('day')">Day</a></div>
-            </div>
-            <div class="tab" data-name="week" data-target=".right-box.top-film .content">
-                <div class="name rank-views-in-week"><a title="Week" rel="nofollow" href="javascript:rankViews('week')">Week</a></div>
+                <div class="name rank-views-in-day"><a title="Day" href="javascript:void(0)">Overall</a></div>
             </div>
         </span>
         <div class="right-box-content">

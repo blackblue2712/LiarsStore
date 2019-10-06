@@ -119,12 +119,12 @@
             $query[] 		= "SELECT b.`id`, b.`views`, b.`name`, b.`price`,b.`special`,b.`sale_off`,b.`picture`, b.`status`, b.`ordering`, b.`created`, b.`created_by`, b.`modified`, b.`modified_by`, b.`book_descript`, c.`name` AS `category_name` ";
 			$query[] 		= "FROM `book` AS b LEFT JOIN `category` AS c";
 			$query[] 		= "ON b.`category_id` = c.`id`";
-            $query[]		= "WHERE b.`special` = 1";
-            $query[]		= "AND b.`status` = 1";
+            // $query[]		= "WHERE b.`special` = 1";
+            $query[]		= "WHERE b.`status` = 1";
             $query[] 		= "AND `c`.`status` = 1";
 
 
-            $query[]		= "ORDER BY `id` DESC";
+            $query[]		= "ORDER BY `views` DESC";
             $query[]		= "LIMIT 0, 8";
             $query = implode(" ", $query);
 
@@ -133,24 +133,31 @@
         }
 
         public function randomItem(){
-            $queryId[] 		= "SELECT b.`id`";
-            $queryId[] 		= "FROM `book` AS b";
-            $ids            = $this->fetchID(implode(" ", $queryId));
-            $ids            = $ids["id"];
-            shuffle($ids);
-            $ids            = $this->createRangeId($ids, array("limit" => 10));
+            if( file_get_contents( PATH_FILES . DS . "xml/timeRandomSilde.txt" ) + 3600 < time()){
+                file_put_contents( PATH_FILES . DS . "xml/timeRandomSilde.txt", time());
+                
+                $queryId[] 		= "SELECT b.`id`";
+                $queryId[] 		= "FROM `book` AS b";
+                $ids            = $this->fetchID(implode(" ", $queryId));
+                $ids            = $ids["id"];
+                shuffle($ids);
+                $ids            = $this->createRangeId($ids, array("limit" => 10));
 
-            $query[] 		= "SELECT b.`id`, b.`name`, b.`price`,b.`special`,b.`sale_off`,b.`picture`, b.`status`, b.`ordering`, b.`created`, b.`created_by`, b.`modified`, b.`modified_by`, b.`book_descript`, c.`name` AS `category_name` ";
-			$query[] 		= "FROM `book` AS b LEFT JOIN `category` AS c";
-			$query[] 		= "ON b.`category_id` = c.`id`";
-            $query[]		= "WHERE b.`id` IN ($ids)";
-            $query[]		= "AND b.`status` = 1";
-            $query[] 		= "AND `c`.`status` = 1";
+                $query[] 		= "SELECT b.`id`, b.`name`, b.`price`,b.`special`,b.`sale_off`,b.`picture`, c.`name` AS `category_name` ";
+                $query[] 		= "FROM `book` AS b LEFT JOIN `category` AS c";
+                $query[] 		= "ON b.`category_id` = c.`id`";
+                $query[]		= "WHERE b.`id` IN ($ids)";
+                $query[]		= "AND b.`status` = 1";
+                $query[] 		= "AND `c`.`status` = 1";
 
-            $query  = implode(" ", $query);
-            $result = $this->fetchAll($query);
-            shuffle($result);
-            return $result;
+                $query  = implode(" ", $query);
+                $result = $this->fetchAll($query);
+                shuffle($result);
+                XML::createXMLPublic($result, "book_random", 'book');
+                return XML::readFileXML("book_random");
+            }else{
+                return XML::readFileXML("book_random");
+            }
         }
 
         //SELECT MIN MAX EPISODE
@@ -183,7 +190,7 @@
             $result = $this->fetchAll($query);
             foreach($result as $key => $value){
                 $result[$key]["picture"]    = Helper::createPathPicture(PATH_PICTURE_BOOK, URL_PICTURE_BOOK, "maxResize", $value["picture"]);
-                $result[$key]["href"]       = URL::createURL("client", "index", "detail", array("id" => $value["id"]));
+                $result[$key]["href"]       = URL::createURL("client", "index", "detail", array("id" => $value["id"]), "/detail-book-$value[id]");
                 $result[$key]["price"]      = number_format($value["price"]);
                 $result[$key]["sale_off"]   = ($value["sale_off"] != 0) ? '<span class="ribbon">-'.$value["sale_off"].'%</span>' : "";
             }
@@ -252,6 +259,7 @@
                 $params["active_code"]  = Helper::createRandomCharacter(20);
 
                 $url_active_code        = "http://localhost" . URL::createURL("client", "index", "activeCode", array("code" => $params["active_code"]));
+                // $url_active_code        = "http://i2k.info" . URL::createURL("client", "index", "activeCode", array("code" => $params["active_code"]));
                 //SEND MAIL
                 require PATH_LIBS . DS . 'extends/Mailer/autoload.php';
                 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
@@ -268,8 +276,8 @@
                     $mail->Port = 587;                                    // TCP port to connect to
 
                     //Recipients
-                    $mail->setFrom('from@example.com', 'Mailer'); 
-                    $mail->addAddress($params["email"], "Black Blue");                    // Add a recipient
+                    $mail->setFrom('nghiab1706729@student.ctu.edu.vn', 'Dang huu nghia'); 
+                    $mail->addAddress($params["email"], "Nhu hao");                    // Add a recipient
 
                     //Content
                     $mail->isHTML(true);                                  // Set email format to HTML
@@ -284,6 +292,7 @@
 
                     $mail->send();
                     echo 'Message has been sent';
+                    echo "<script>alert(1)</script>";
                 } catch (Exception $e) {
                     echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
                 }
@@ -296,6 +305,7 @@
             if(isset($_SESSION["emailToResendActivecCode"])){
                 $params["active_code"]  = Helper::createRandomCharacter(20);
                 $url_active_code        = "http://localhost" . URL::createURL("client", "index", "activeCode", array("code" => $params["active_code"]));
+                // $url_active_code        = "http://i2k.info" . URL::createURL("client", "index", "activeCode", array("code" => $params["active_code"]));
 
                 //SEND MAIL
                 require PATH_LIBS . DS . 'extends/Mailer/autoload.php';
@@ -313,8 +323,8 @@
                     $mail->Port = 587;                                    // TCP port to connect to
 
                     //Recipients
-                    $mail->setFrom('from@example.com', 'Mailer'); 
-                    $mail->addAddress($_SESSION["emailToResendActivecCode"], "Black Blue");                    // Add a recipient
+                    $mail->setFrom('nghiab1706729@student.ctu.edu.vn', 'Dang huu nghia'); 
+                    $mail->addAddress($params["email"], "Nhu hao");
 
                     //Content
                     $mail->isHTML(true);                                  // Set email format to HTML
@@ -327,12 +337,12 @@
 
                     $mail->send();
                     // echo 'Message has been sent';
+                    alert(12)
                 } catch (Exception $e) {
-                    // echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+                    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
                 }
                 $query                  = "UPDATE `user` SET `active_code` = '$params[active_code]' WHERE `email` = '$_SESSION[emailToResendActivecCode]'";
                 $countRowAffected= $this->executeAndReturnAffectedRows($query);
-
             }
         }
 

@@ -6,6 +6,7 @@ RewriteRule     history.html                       index.php?module=client&contr
 RewriteRule     account.html                       index.php?module=client&controller=user&action=index
 RewriteRule     login.html                         index.php?module=client&controller=index&action=login
 RewriteRule     logout.html                        index.php?module=client&controller=index&action=logout
+RewriteRule     activeAccount.html                index.php?module=client&controller=index&action=activeAccount
 RewriteRule     cate-([A-Za-z0-9-_]+)-([0-9]+).html index.php?module=client&controller=index&action=index&category_id=$2
 RewriteRule     detail-book-([0-9]+).html          index.php?module=client&controller=index&action=detail&id=$1
 RewriteRule     read-book-([0-9]+)-([0-9]+).html   index.php?module=client&controller=index&action=readBook&id_book=$1&chapter=$2

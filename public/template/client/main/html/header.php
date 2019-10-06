@@ -79,3 +79,8 @@
     </div>
 </div>
 <div class="clear"></div>
+<?php
+    if($badge_cart == 0){
+        echo Helper::createScript("$('span.fa-shopping-cart small.badge').hide()");
+    }
+?>

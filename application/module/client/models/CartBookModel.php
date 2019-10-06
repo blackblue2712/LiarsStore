@@ -140,7 +140,7 @@
             $result = $this->fetchAll($query);
             foreach($result as $key => $value){
                 $result[$key]["picture"]    = Helper::createPathPicture(PATH_PICTURE_BOOK, URL_PICTURE_BOOK, "maxResize", $value["picture"]);
-                $result[$key]["href"]       = URL::createURL("client", "index", "detail", array("id" => $value["id"]));
+                $result[$key]["href"]       = URL::createURL("client", "index", "detail", array("id" => $value["id"]), "detail-book-$value[id]");
                 $result[$key]["price"]      = number_format($value["price"]);
                 $result[$key]["sale_off"]   = ($value["sale_off"] != 0) ? '<span class="ribbon">-'.$value["sale_off"].'%</span>' : "";
             }
@@ -170,7 +170,7 @@
             if(!empty($result)){
                 foreach($result as $key => $value){
                     $result[$key]["picture"]    = Helper::createPathPicture(PATH_PICTURE_BOOK, URL_PICTURE_BOOK, "maxResize", $value["picture"]);
-                    $result[$key]["href"]       = URL::createURL("client", "index", "detail", array("id" => $value["id"]));
+                    $result[$key]["href"]       = URL::createURL("client", "index", "detail", array("id" => $value["id"]), "/detail-book-$value[id].html");
                     $result[$key]["book_descript"]   = Helper::sliceStr($result[$key]["book_descript"], 10);
                 }
             }

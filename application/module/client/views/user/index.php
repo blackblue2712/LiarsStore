@@ -1,6 +1,5 @@
 
 <?php
-    
     $username = $_SESSION["userLogin"]["infoUser"]["username"];
     $fullname = $_SESSION["userLogin"]["infoUser"]["fullname"];
     $email    = $_SESSION["userLogin"]["infoUser"]["email"];

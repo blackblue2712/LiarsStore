@@ -500,3 +500,9 @@ div.modal-config-footer div > a, div.modal-config-footer div > button{
 		background-position: 0% 50%
 	}
 }
+@media screen and (max-width: 1100px) {
+    blockquote.generate-chapter {
+        width: 80%;
+        margin: 0px auto;
+    }
+}

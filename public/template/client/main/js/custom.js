@@ -163,7 +163,7 @@ $(document).ready(function(){
 
     //
     $("div.episodes ul.chapter-book-all li a").click(function(e){
-        idBook = getUrlVar("id");
+        idBook = getUrlVarShortLink("/detail-book-");
         $.ajax({
             url     : '/LiarsStore/index.php?module=client&controller=index&action=countView',
             dataType: 'html',
@@ -262,6 +262,10 @@ function onOrder(url, price){
         alert("Please type number of quantity");
         $("input.quantity_book").val(1);
     }else{
+        var sound = new buzz.sound("/LiarsStore/public/audio/discord", {
+            formats: ["mp3"]
+        });
+        sound.play();
         $.ajax({
             url     : url,
             dataType: "json",
@@ -277,7 +281,7 @@ function onOrder(url, price){
                     $("li.icon-cart").css("background", "none").children().show();
                 })
                 //Update interface
-                $("small.badge-cart").html(data.totalItemInCart);
+                $("small.badge-cart").html(data.totalItemInCart).show();
                 $(".cart-amount").html('<i class="fa fa-dollar"></i> ' + data.totalAmount)
             },
             error    : (jqXHR, textStatus, errorThrowndata) =>{
@@ -560,6 +564,10 @@ function getUrlVar(key){
 	var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search); 
 	return result && unescape(result[1]) || ""; 
 }
+function getUrlVarShortLink(key){
+    var result = new RegExp(key + "([0-9]+)", "i").exec(window.location.pathname);
+    return result && unescape(result[1]) || "";
+}
 
 function openModalConfigFont(){
     $("div.wrap-mask").fadeIn();
@@ -576,6 +584,5 @@ function closeConfig(){
         opacity: 0
     },300, () =>{
         $("div.modal-config-font").hide();
-    });
-    
+    });   
 }

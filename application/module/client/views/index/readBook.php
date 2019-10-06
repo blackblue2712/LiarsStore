@@ -1,4 +1,5 @@
 <?php
+    $renderChapter = !empty($this->renderedChapter["content_chapter"]) ? html_entity_decode( stripcslashes( stripcslashes($this->renderedChapter["content_chapter"]))) : "<h3 style='padding-bottom:200px'>Chapter not exists</h3>";
     $minEp      = (int)$this->minMaxEp["minEp"];
     $maxEp      = (int)$this->minMaxEp["maxEp"];
     $currentEp  = (int)$this->params["chapter"];
@@ -13,11 +14,12 @@
     $url_next = URL::createURL("client", "index", "readBook", array("id_book" =>$id_book, "chapter" => $Nextchapter), "/read-book-$id_book-$Nextchapter.html");
 
     
-    if(isset($_SESSION["configReadBook"])){
-        $fontConfig         = $_SESSION["configReadBook"]["fontConfig"];
-        $backgroundConfig   = $_SESSION["configReadBook"]["backgroundConfig"];
-        $colorConfig        = $_SESSION["configReadBook"]["colorConfig"];
-        $fontSizeConfig     = $_SESSION["configReadBook"]["fontSizeConfig"];
+    if(isset($_COOKIE["configReadBook"])){
+        $dataConfig         = unserialize($_COOKIE["configReadBook"]);
+        $fontConfig         = $dataConfig["fontConfig"];
+        $backgroundConfig   = $dataConfig["backgroundConfig"];
+        $colorConfig        = $dataConfig["colorConfig"];
+        $fontSizeConfig     = $dataConfig["fontSizeConfig"];
         echo Helper::createScript(
             '$("blockquote.generate-chapter").css({
                 "font-family"         : "'.$fontConfig.'",
@@ -40,8 +42,8 @@
         </div>
     </span>
     <div class="clearfix"></div>
-    <blockquote class="generate-chapter" style="margin-top: 20px; color: #ccc; border-left-color: #10B591">
-        <?php echo html_entity_decode( stripcslashes( stripcslashes($this->renderedChapter["content_chapter"])))?>
+    <blockquote class="generate-chapter" style="margin-top: 20px; color: #ccc; border-left-color: #10B591;">
+        <?php echo $renderChapter?>
     </blockquote>
 
     <div class="wrap-control-readbook">

@@ -1,24 +1,25 @@
 <?php
     $xhtml = "";
     foreach($this->listRandom as $key => $value){
-        $linkDetail = URL::createURL("client", "index", "detail", array("id" => $value["id"]), "/detail-book-$value[id].html");
-        $picture  = Helper::createPathPicture(PATH_PICTURE_BOOK, URL_PICTURE_BOOK, "maxResize", $value["picture"]);
+        $price = $value->price   ;
+        $linkDetail = URL::createURL("client", "index", "detail", array("id" => $value->id), "/detail-book-$value->id.html");
+        $picture  = Helper::createPathPicture(PATH_PICTURE_BOOK, URL_PICTURE_BOOK, "maxResize", $value->picture);
 
-        $name           = htmlentities(stripcslashes(Helper::sliceStr($value["name"], 3)));
-        $value["name"]  = htmlentities(stripcslashes($value["name"]));
-        $sale_off       = ($value["sale_off"] != 0) ? '<span style="display:none" class="ribbon status">-'.$value["sale_off"].'%</span>' : "";
+        $name           = htmlentities(stripcslashes(Helper::sliceStr($value->name, 3)));
+        $value["name"]  = htmlentities(stripcslashes($value->name));
+        $sale_off       = ($value->sale_off != 0) ? '<span style="display:none" class="ribbon status">-'.$value->sale_off.'%</span>' : "";
         $xhtml .= '<li>
-                        <a class="movie-item m-block" title="'.$value["name"].'" href="'.$linkDetail.'">
+                        <a class="movie-item m-block" title="'.$value->name.'" href="'.$linkDetail.'">
                             <div class="block-wrapper">
                                 <div class="movie-thumbnail ratio-box ratio-3_4">
                                     <div class="public-film-item-thumb ratio-content" style="background-image:url('.$picture.')"></div>
                                 </div>
                                 <div class="movie-meta">
                                     <div class="movie-title-1">'.$name.'</div>
-                                    <span class="movie-title-2">'.$value["name"].'</span>
+                                    <span class="movie-title-2">'.$value->name.'</span>
                                     <span class="movie-title-chap">45758 </span>
                                     '.$sale_off.'
-                                    <span style="display:none" class="ribbon ribbon-right right_price">'.number_format($value["price"]).'</span>
+                                    <span style="display:none" class="ribbon ribbon-right right_price">'.($price).'</span>
                                     
                                 </div>
                             </div>

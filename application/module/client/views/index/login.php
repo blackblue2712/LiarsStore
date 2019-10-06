@@ -70,14 +70,16 @@
                                         <label for="username" class="require">User name</label>
                                         <input id="user_name" type="text" name="form[username]" class="form-control" placeholder="User ID" value="">
                                         <span class="form-control-feedback loading" style="background: url(public/loading/loadingnb.gif); min-height:32px; min-width:32px; display:none"></span>
-                                        <span class="form-control-feedback success" style="background: url(public/loading/success.gif); min-height:32px; min-width:32px; display:none"></span>
+                                        <!-- <span class="form-control-feedback success" style="background: url(public/loading/success.gif); min-height:32px; min-width:32px; display:none"></span> -->
+                                        <span class="form-control-feedback success" style="display:none"><i class="fa fa-check"></i></span>
                                         <span class="form-control-feedback warning" style="background: url(public/loading/warning.gif); min-height:32px; min-width:32px; display:none"></span>
                                     </div>
                                     <div class="form-group">
                                         <label for="email" class="require">Email</label>
                                         <input id="email" type="email" name="form[email]" class="form-control" placeholder="Email">
                                         <span class="form-control-feedback loading" style="background: url(public/loading/loadingnb.gif); min-height:32px; min-width:32px; display:none"></span>
-                                        <span class="form-control-feedback success" style="background: url(public/loading/success.gif); min-height:32px; min-width:32px; display:none"></span>
+                                        <!-- <span class="form-control-feedback success" style="background: url(public/loading/success.gif); min-height:32px; min-width:32px; display:none"></span> -->
+                                        <span class="form-control-feedback success" style="display:none"><i class="fa fa-check"></i></span>
                                         <span class="form-control-feedback warning" style="background: url(public/loading/warning.gif); min-height:32px; min-width:32px; display:none"></span>
                                     </div>
                                     <div class="form-group">

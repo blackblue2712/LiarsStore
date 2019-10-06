@@ -60,7 +60,7 @@
                     $this->_model->changeAvatar($fileNameUpload);
                 }
             }
-            URL::redirect("client", "user", "index");
+            URL::redirect("client", "user", "index", null, "/account.html");
         }
         
     }

@@ -20,7 +20,7 @@
             $this->_templateObj->load();
 
             if(isset($_SESSION["userLogin"]) && $_SESSION["userLogin"]["isLogin"] == 1){
-                URL::redirect("admin", "index", "index");
+                URL::redirect("admin", "index", "index", null, "/index.html");
             }
 
             if(isset($this->_params["form"])){

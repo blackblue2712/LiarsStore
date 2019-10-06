@@ -27,7 +27,7 @@
 
 
     //URL REDIRECT HOME PAGE
-    define("URL_HOME_PAGE"          , "/LiarsStore/index.php?module=client&controller=index&action=index");
+    define("URL_HOME_PAGE"          , "/LiarsStore/index.html");
 
 
 

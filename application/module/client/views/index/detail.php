@@ -8,6 +8,9 @@
             $xPreview .= '<li><a href="'.$url_read.'" title="'.$value["chapter_number"].'">'.$value["chapter_number"].'</a></li>';
         }
     }
+    $xDetail    = "";
+    $xDescript  = "";
+    $xImg       = "";
     if(!empty($this->detailBook)){
         $infoBook       = $this->detailBook;
         $id_book        = $infoBook["id"];
@@ -96,6 +99,8 @@
                             </div>
                         </div>
                     </blockquote>';
+    }else{
+        $xDescript = "404 - Book not exists";
     }
 ?>
 

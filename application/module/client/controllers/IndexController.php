@@ -54,16 +54,14 @@
         } 
 
         public function loginAction(){
-            echo '<pre style=color:#176F08;font-weight:bold >';
-            print_r($_SESSION);
-            echo '</pre>';
+
             $this->_templateObj->setFileConfig("loginTemplate.ini");
             $this->_templateObj->setFileTemplate("login.php");
             $this->_templateObj->setFolderTemplate("client/main");
             $this->_templateObj->load();
 
             if(isset($_SESSION["userLogin"]) && $_SESSION["userLogin"]["isLogin"] == 1){
-                URL::redirect("client", "index", "index");
+                URL::redirect("client", "index", "index", null, "/index.html");
             }
 
             if(isset($this->_params["form"])){
@@ -86,7 +84,7 @@
                     if($isActive == 0){
                         Session::delete("token");
                         Session::set("emailToResendActivecCode", $infoUser["email"]);
-                        URL::redirect("client", "index", "activeAccount");
+                        URL::redirect("client", "index", "activeAccount", null, "/activeAccount.html");
                     }else{
                         $array_session   = array(
                             "infoUser"   => $infoUser,
@@ -94,7 +92,7 @@
                             "timeLogin"  => time() 
                         );
                         Session::set("userLogin", $array_session);
-                        URL::redirect("client", "index", "index");
+                        URL::redirect("client", "index", "index", null, "/index.html");
                     }
                }else{
                    Session::set("msg", "Username or password was wrong");
@@ -126,7 +124,7 @@
                     if($isActive == 0){
                         Session::delete("token");
                         Session::set("emailToResendActivecCode", $infoUser["email"]);
-                        echo json_encode( array("redirect" => URL::createURL("client", "index", "activeAccount")) );
+                        echo json_encode( array("redirect" => URL::createURL("client", "index", "activeAccount", null, "/active-account.html")) );
                     }else{
                         $array_session   = array(
                             "infoUser"   => $infoUser,
@@ -149,7 +147,7 @@
             Session::delete("userLogin");
             Session::delete("token");
             Session::delete("access_token");
-            $urlRedirect = URL::createURL("client", "index", "index");
+            $urlRedirect = URL::createURL("client", "index", "index", null, "/index.html");
 
             echo json_encode( array("redirect" => $urlRedirect) );
         }
@@ -177,7 +175,7 @@
             if($validate->isValid()){
                 $affectedRows = $this->_model->insertUser($this->_params["form"]);
                 $_SESSION["emailToResendActivecCode"] = $this->_params["form"]["email"];
-                URL::redirect("client", "index", "activeAccount");
+                URL::redirect("client", "index", "activeAccount", null, "/activeAccount.html");
             }else{
                 echo '<pre style=color:#176F08;font-weight:bold >';
                 print_r($validate->getErrors());
@@ -198,8 +196,7 @@
                 }else{
                     Session::set("notice", "Your active code has been expired");
                 }
-                
-                URL::redirect("client", "index", "login");
+                URL::redirect("client", "index", "login", null, "/login.html");
             }
         }
 
@@ -246,7 +243,7 @@
                     'default_graph_version' => "v3.2", 			//current version
                 ]
             );
-            $URLCallback     = "http://localhost//LiarsStore/index.php?module=client&controller=index&action=URLCallbackFaceook";
+            $URLCallback        = "http://localhost//LiarsStore/index.php?module=client&controller=index&action=URLCallbackFaceook";
             $helper 		    = $fb->getRedirectLoginHelper();
             // $permissions 	= ['email', 'id', 'name', 'picture'];
             echo $loginUrl 		= $helper->getLoginUrl($URLCallback);
@@ -307,10 +304,11 @@
         //SAVE CHANGE CONFIG READ BOOK
         public function saveChangeReadBookAction(){
             if(!empty($_POST)){
-                $_SESSION["configReadBook"] = $_POST;
+                setcookie("configReadBook", serialize($_POST));
             }
         }
         public function defaultChangeReadBookAction(){
-            if(isset($_SESSION["configReadBook"])) unset($_SESSION["configReadBook"]);
+            // if(isset($_SESSION["configReadBook"])) unset($_SESSION["configReadBook"]);
+            if(isset($_COOKIE["configReadBook"])) setcookie("configReadBook", "", time() - 3600);
         }
     }
